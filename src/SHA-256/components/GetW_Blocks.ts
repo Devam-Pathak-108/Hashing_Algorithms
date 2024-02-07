@@ -3,19 +3,15 @@ import { xor } from "./gates";
 
 export const GetW_blocks = async (Bit32Blocks: string[]) => {
   var W_blocks = Bit32Blocks;
-  const temp = addBinary(addBinary(
-    addBinary(await sigma1(W_blocks[14]), W_blocks[9]),
-   await sigma0(W_blocks[1])
-  ),W_blocks[0])
-  console.log(
-    await sigma1(W_blocks[14]),
-    W_blocks[9],
-    await sigma0(W_blocks[1]),
+  const temp = addBinary(
+    addBinary(
+      addBinary(await sigma1(W_blocks[14]), W_blocks[9]),
+      await sigma0(W_blocks[1])
+    ),
     W_blocks[0]
   );
-  // for(var i = W_blocks.length ; i<64 ; i++){
 
-  // }
+  console.log(temp);
 };
 
 const sigma1 = async (text: string) => {
