@@ -11,7 +11,6 @@ export const paddingBits = async (text: string): Promise<string> => {
   var arrayOf0s = [...Array(tempdata).keys()].map((temp) => "0");
 
   var padded = temp + arrayOf0s.join("");
-  console.log(padded.length);
   // Append 64 bits to the end, where the 64 bits are a big-endian integer representing the length of the original input in binary.
   //basically a 64 bit string ending with binary of length of text
   var lengthToPad = 64 - (text.length >>> 0).toString(2).length;
