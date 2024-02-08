@@ -46,7 +46,7 @@ const sigma0 = async (text: string) => {
   return result;
 };
 
-const rotateRight = (text: string, movement: number) => {
+ export const rotateRight = (text: string, movement: number) => {
   //right rotation
   return text.slice(-movement) + text.slice(0, -movement);
 };
