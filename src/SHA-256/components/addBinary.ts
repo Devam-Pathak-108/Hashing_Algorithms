@@ -1,7 +1,7 @@
 import { fullAdder } from "./fullAdder";
 import { halfAdder } from "./halfAdder";
 
-export function addBinary(a: string, b: string) {
+export const addBinary = async (a: string, b: string) => {
   let sum = "";
   let carry = "";
 
@@ -23,4 +23,4 @@ export function addBinary(a: string, b: string) {
   result = result.slice(-32);
 
   return result;
-}
+};

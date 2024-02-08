@@ -2,11 +2,11 @@ export const hashConstants = {
   h0: "6a09e667",
   h1: "bb67ae85",
   h2: "3c6ef372",
-  h3: "0xa54ff53a",
-  h4: "0x510e527f",
-  h5: "0x9b05688c",
-  h6: "0x1f83d9ab",
-  h7: "0x5be0cd19",
+  h3: "a54ff53a",
+  h4: "510e527f",
+  h5: "9b05688c",
+  h6: "1f83d9ab",
+  h7: "5be0cd19",
 };
 
 export const Kconstants = [

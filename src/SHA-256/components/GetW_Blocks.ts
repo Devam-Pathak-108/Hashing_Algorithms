@@ -1,20 +1,20 @@
 import { addBinary } from "./addBinary";
 import { xor } from "./gates";
 
-export const GetW_blocks = async (Bit32Blocks: string[]) => {
+const GetW_blocks = async (Bit32Blocks: string[]) => {
   var W_blocks = Bit32Blocks;
-  
-  for(var i = Bit32Blocks.length ; i<64 ; i ++){
-    const temp = addBinary(
-      addBinary(
-        addBinary(await sigma1(W_blocks[i-2]), W_blocks[i-7]),
-        await sigma0(W_blocks[i-15])
+
+  for (var i = Bit32Blocks.length; i < 64; i++) {
+    const temp = await addBinary(
+      await addBinary(
+        await addBinary(await sigma1(W_blocks[i - 2]), W_blocks[i - 7]),
+        await sigma0(W_blocks[i - 15])
       ),
-      W_blocks[i-16]
+      W_blocks[i - 16]
     );
-    console.log(temp +'\n')
+    W_blocks.push(temp);
   }
-  return W_blocks
+  return W_blocks;
 };
 
 const sigma1 = async (text: string) => {
@@ -46,14 +46,14 @@ const sigma0 = async (text: string) => {
   return result;
 };
 
- export const rotateRight = (text: string, movement: number) => {
+const rotateRight = (text: string, movement: number) => {
   //right rotation
   return text.slice(-movement) + text.slice(0, -movement);
 };
 const shiftRight = (text: string, movement: number) => {
-  //right shift
   return (
     [...Array(movement).keys()].map((temp) => "0").join("") +
     text.slice(0, -movement)
   );
 };
+export { GetW_blocks, rotateRight };
