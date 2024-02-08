@@ -8,10 +8,7 @@ export const GetW_blocks = async (Bit32Blocks: string[]) => {
    await sigma0(W_blocks[1])
   ),W_blocks[0])
   console.log(
-    await sigma1(W_blocks[14]),
-    W_blocks[9],
-    await sigma0(W_blocks[1]),
-    W_blocks[0]
+    temp.length
   );
   // for(var i = W_blocks.length ; i<64 ; i++){
 
